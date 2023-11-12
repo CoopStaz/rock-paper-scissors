@@ -7,7 +7,7 @@ Write a function that plays a single round
 
 Return a string that declares the winner of the round ex 'You lose! Paper beats rock'
 
-Write function game. Use previous function inside of this to play a 5 round game. Must keep score and report winner or loser at the end.
+Write function called game. Use previous function inside of this to play a 5 round game. Must keep score and report winner or loser at the end.
 
 Use console.log() to display results
 
