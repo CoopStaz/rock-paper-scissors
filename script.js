@@ -63,4 +63,7 @@ function game() {
     } else {
         console.log("Computer wins! Better luck next time.")
     }
+
+    playerWinCount = 0;
+    computerWinCount = 0;
 }
