@@ -14,7 +14,7 @@ function getComputerChoice() {
 function playRound(playerSelection, computerSelection) {
     playerSelection = prompt("What do you choose?").toLowerCase();
     computerSelection = getComputerChoice();
-
+    
     let playerWinCount;
     let computerWinCount;
     
@@ -43,20 +43,20 @@ function playRound(playerSelection, computerSelection) {
 
 function game() {
     playRound();
-    return `Player score: ${playerWinCount}`;
-    return `Computer score: ${computerWinCount}`;
+    console.log(`Player score: ${playerWinCount}`);
+    console.log(`Computer score: ${computerWinCount}`);
     playRound();
-    return `Player score: ${playerWinCount}`;
-    return `Computer score: ${computerWinCount}`;
+    console.log(`Player score: ${playerWinCount}`);
+    console.log(`Computer score: ${computerWinCount}`);
     playRound();
-    return `Player score: ${playerWinCount}`;
-    return `Computer score: ${computerWinCount}`;
+    console.log(`Player score: ${playerWinCount}`);
+    console.log(`Computer score: ${computerWinCount}`);
     playRound();
-    return `Player score: ${playerWinCount}`;
-    return `Computer score: ${computerWinCount}`;
+    console.log(`Player score: ${playerWinCount}`);
+    console.log(`Computer score: ${computerWinCount}`);
     playRound();
-    return `Player score: ${playerWinCount}`;
-    return `Computer score: ${computerWinCount}`;
+    console.log(`Player score: ${playerWinCount}`);
+    console.log(`Computer score: ${computerWinCount}`);
 }
 
 
