@@ -22,24 +22,40 @@ function getComputerChoice() {
 function playRound(playerSelection, computerSelection) {
     playerSelection = prompt("What do you choose?").toLowerCase();
     computerSelection = getComputerChoice();
+    let playerWinCount;
+    let computerWinCount;
     
     if (playerSelection == computerSelection) {
         return `Draw! ${playerSelection} and ${computerSelection} are the same.`;
     } else if (playerSelection == "rock" && computerSelection == "scissors") {
         return "You win! Rock beats scissors.";
+        playerWinCount =+ 1;
     } else if (playerSelection == "rock" && computerSelection == "paper") {
         return "You lose! Paper beats rock.";
+        computerWinCount =+ 1;
     } else if (playerSelection == "paper" && computerSelection == "scissors") {
         return "You lose! Scissors beats paper.";
+        computerWinCount =+ 1;
     } else if (playerSelection == "paper" && computerSelection == "rock") {
         return "You win! Paper beats rock.";
+        playerWinCount =+ 1;
     } else if (playerSelection == "scissors" && computerSelection == "paper") {
         return "You win! Scissors beats paper.";
+        playerWinCount =+ 1;
     } else {
         return "You lose! Rock beats scissors";
+        computerWinCount =+ 1;
     }
-
-    console.log(playerSelection);
-    console.log(computerSelection);
 }
+
+//Write a function called game()
+//Must use previous function to play 5 rounds
+//Must keep score
+//Report the winner or loser at the end.
+
+function game() {
+    playRound();
+
+}
+
 
