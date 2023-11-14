@@ -60,8 +60,10 @@ function game() {
     
     if (playerWinCount > computerWinCount) {
         console.log("Player wins!");
-    } else {
+    } else if (playerWinCount < computerWinCount) {
         console.log("Computer wins! Better luck next time.")
+    } else {
+        console.log("It is a draw!");
     }
 
     playerWinCount = 0;
