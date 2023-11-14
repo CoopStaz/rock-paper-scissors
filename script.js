@@ -1,13 +1,13 @@
 function getComputerChoice() {
     const gameOptions = ["rock", "paper", "scissors"];
-    let computerChoice = Math.ceil(Math.random() * gameOptions.length - 1);
+    let computerChoice = Math.ceil(Math.random() * gameOptions.length) -1 ;
 
     if (computerChoice == 1) {
-        computerChoice = "rock";
+        return computerChoice = "rock";
     } else if (computerChoice == 2) {
-        computerChoice = "paper";
+        return computerChoice = "paper";
     } else {
-        computerChoice = "scissors";
+        return computerChoice = "scissors";
     }
 }
 
@@ -35,7 +35,7 @@ function playRound(playerSelection, computerSelection) {
     } else if (playerSelection == "scissors" && computerSelection == "paper") {
         playerWinCount += 1;
         console.log("You win! Scissors beats paper.");
-    } else {
+    } else if (playerSelection == "scissors" && computerSelection == "rock") {
         computerWinCount += 1;
         console.log("You lose! Rock beats scissors");
     }
@@ -57,6 +57,10 @@ function game() {
     playRound();
     console.log(`Player score: ${playerWinCount}`);
     console.log(`Computer score: ${computerWinCount}`);
+    
+    if (playerWinCount > computerWinCount) {
+        console.log("Player wins!");
+    } else {
+        console.log("Computer wins! Better luck next time.")
+    }
 }
-
-
