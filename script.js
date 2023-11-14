@@ -11,12 +11,12 @@ function getComputerChoice() {
     }
 }
 
+    let playerWinCount;
+    let computerWinCount;
+
 function playRound(playerSelection, computerSelection) {
     playerSelection = prompt("What do you choose?").toLowerCase();
     computerSelection = getComputerChoice();
-    
-    let playerWinCount;
-    let computerWinCount;
     
     if (playerSelection == computerSelection) {
         return `Draw! ${playerSelection} and ${computerSelection} are the same.`;
