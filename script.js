@@ -55,7 +55,10 @@ function playRound(playerSelection, computerSelection) {
 
 function game() {
     playRound();
-
+    playRound();
+    playRound();
+    playRound();
+    playRound();
 }
 
 
