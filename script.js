@@ -11,33 +11,33 @@ function getComputerChoice() {
     }
 }
 
-    let playerWinCount;
-    let computerWinCount;
+    let playerWinCount = 0;
+    let computerWinCount = 0;
 
 function playRound(playerSelection, computerSelection) {
     playerSelection = prompt("What do you choose?").toLowerCase();
     computerSelection = getComputerChoice();
     
     if (playerSelection == computerSelection) {
-        return `Draw! ${playerSelection} and ${computerSelection} are the same.`;
+        console.log(`Draw! ${playerSelection} and ${computerSelection} are the same.`);
     } else if (playerSelection == "rock" && computerSelection == "scissors") {
-        return "You win! Rock beats scissors.";
         playerWinCount += 1;
+        console.log("You win! Rock beats scissors.");
     } else if (playerSelection == "rock" && computerSelection == "paper") {
-        return "You lose! Paper beats rock.";
         computerWinCount += 1;
+        console.log("You lose! Paper beats rock.");
     } else if (playerSelection == "paper" && computerSelection == "scissors") {
-        return "You lose! Scissors beats paper.";
         computerWinCount += 1;
+        console.log("You lose! Scissors beats paper.");
     } else if (playerSelection == "paper" && computerSelection == "rock") {
-        return "You win! Paper beats rock.";
         playerWinCount += 1;
+        console.log("You win! Paper beats rock.");
     } else if (playerSelection == "scissors" && computerSelection == "paper") {
-        return "You win! Scissors beats paper.";
         playerWinCount += 1;
+        console.log("You win! Scissors beats paper.");
     } else {
-        return "You lose! Rock beats scissors";
         computerWinCount += 1;
+        console.log("You lose! Rock beats scissors");
     }
 }
 
