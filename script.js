@@ -3,11 +3,11 @@ function getComputerChoice() {
     let computerChoice = Math.ceil(Math.random() * gameOptions.length - 1);
 
     if (computerChoice == 1) {
-        return (computerChoice = "rock");
+        computerChoice = "rock";
     } else if (computerChoice == 2) {
-        return (computerChoice = "paper");
+        computerChoice = "paper";
     } else {
-        return (computerChoice = "scissors");
+        computerChoice = "scissors";
     }
 }
 
