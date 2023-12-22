@@ -14,58 +14,54 @@ function getComputerChoice() {
     let playerWinCount = 0;
     let computerWinCount = 0;
 
-function playRound(playerSelection, computerSelection) {
-    playerSelection = prompt("What do you choose?").toLowerCase();
+function playRound(playerSelection) {
     computerSelection = getComputerChoice();
     
     if (playerSelection == computerSelection) {
-        console.log(`Draw! ${playerSelection} and ${computerSelection} are the same.`);
+        results.textContent=`Draw! ${playerSelection} and ${computerSelection} are the same.\n Player Score = ${playerWinCount} | Computer Score = ${computerWinCount}`;
     } else if (playerSelection == "rock" && computerSelection == "scissors") {
         playerWinCount += 1;
-        console.log("You win! Rock beats scissors.");
+        results.textContent=`You win! Rock beats scissors. \n Player Score = ${playerWinCount} | Computer Score = ${computerWinCount}`;
     } else if (playerSelection == "rock" && computerSelection == "paper") {
         computerWinCount += 1;
-        console.log("You lose! Paper beats rock.");
+        results.textContent=`You lose! Paper beats rock.\n Player Score = ${playerWinCount} | Computer Score = ${computerWinCount}`;
     } else if (playerSelection == "paper" && computerSelection == "scissors") {
         computerWinCount += 1;
-        console.log("You lose! Scissors beats paper.");
+        results.textContent=`You lose! Scissors beats paper.\n Player Score = ${playerWinCount} | Computer Score = ${computerWinCount}`;
     } else if (playerSelection == "paper" && computerSelection == "rock") {
         playerWinCount += 1;
-        console.log("You win! Paper beats rock.");
+        results.textContent=`You win! Paper beats rock.\n Player Score = ${playerWinCount} | Computer Score = ${computerWinCount}`;
     } else if (playerSelection == "scissors" && computerSelection == "paper") {
         playerWinCount += 1;
-        console.log("You win! Scissors beats paper.");
+        results.textContent=`You win! Scissors beats paper.\nPlayer Score = ${playerWinCount} | Computer Score = ${computerWinCount}`;
     } else if (playerSelection == "scissors" && computerSelection == "rock") {
         computerWinCount += 1;
-        console.log("You lose! Rock beats scissors");
+        results.textContent=`You lose! Rock beats scissors.\n Player Score = ${playerWinCount} | Computer Score = ${computerWinCount}`;
+    }
+    if (playerWinCount == 5) {
+        results.textContent = `Player Wins! \n Player Score = ${playerWinCount} | Computer Score = ${computerWinCount}`;
+        playerWinCount = 0;
+        computerWinCount = 0;
+    } else if (computerWinCount == 5) {
+        results.textContent = `Computer Wins! \n Player Score = ${playerWinCount} | Computer Score = ${computerWinCount}`;
+        playerWinCount = 0;
+        computerWinCount = 0;
     }
 }
 
-function game() {
-    playRound();
-    console.log(`Player score: ${playerWinCount}`);
-    console.log(`Computer score: ${computerWinCount}`);
-    playRound();
-    console.log(`Player score: ${playerWinCount}`);
-    console.log(`Computer score: ${computerWinCount}`);
-    playRound();
-    console.log(`Player score: ${playerWinCount}`);
-    console.log(`Computer score: ${computerWinCount}`);
-    playRound();
-    console.log(`Player score: ${playerWinCount}`);
-    console.log(`Computer score: ${computerWinCount}`);
-    playRound();
-    console.log(`Player score: ${playerWinCount}`);
-    console.log(`Computer score: ${computerWinCount}`);
-    
-    if (playerWinCount > computerWinCount) {
-        console.log("Player wins!");
-    } else if (playerWinCount < computerWinCount) {
-        console.log("Computer wins! Better luck next time.")
-    } else {
-        console.log("It is a draw!");
-    }
+const rock = document.getElementById('rock');
+const paper = document.getElementById('paper');
+const scissors = document.getElementById('scissors');
+const results = document.getElementById('results');
 
-    playerWinCount = 0;
-    computerWinCount = 0;
-}
+rock.addEventListener('click',function() {
+    playRound("rock");
+});
+
+paper.addEventListener('click',function() {
+    playRound("paper");
+});
+
+scissors.addEventListener('click',function() {
+    playRound("scissors");
+});
